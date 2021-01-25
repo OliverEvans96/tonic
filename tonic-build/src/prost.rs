@@ -280,7 +280,9 @@ impl Builder {
         let out_dir = if let Some(out_dir) = self.out_dir.as_ref() {
             out_dir.clone()
         } else {
-            PathBuf::from(std::env::var("OUT_DIR").unwrap())
+            let _out_dir = std::env::var("OUT_DIR").unwrap();
+            println!("PROST OUT_DIR = {}", _out_dir);
+            PathBuf::from(_out_dir);
         };
 
         #[cfg(feature = "rustfmt")]
