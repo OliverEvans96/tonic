@@ -282,7 +282,7 @@ impl Builder {
         } else {
             let _out_dir = std::env::var("OUT_DIR").unwrap();
             println!("PROST OUT_DIR = {}", _out_dir);
-            PathBuf::from(_out_dir);
+            PathBuf::from(_out_dir)
         };
 
         #[cfg(feature = "rustfmt")]
